@@ -1,10 +1,6 @@
-from rest_framework.serializers import HyperlinkedModelSerializer
-from django.contrib.auth.models import User
+from rest_framework.serializers import Serializer, CharField
 
 
-class UserSerializer(HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ['username', 'password', 'first_name']
-        extra_kwargs = {'password': {'write_only': True}}
-        depth = 1
+class UserSerializer(Serializer):
+    user = CharField(max_length=200)
+    is_staff = CharField(max_length=200)

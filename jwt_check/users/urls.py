@@ -3,6 +3,5 @@ from .views import UserViewSet
 
 
 urlpatterns = [
-    # ...
-    path('users/', UserViewSet.as_view(), name='users_api'),
+    path('users/', UserViewSet.as_view({'get': 'retrieve'}), name='users_api'),
 ]
