@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import UserViewSet
+from .views import UserViewSet, AdminViewSet
 
 
 urlpatterns = [
-    path('users/', UserViewSet.as_view({'get': 'retrieve'}), name='users_api'),
+    path('user/', UserViewSet.as_view({'get': 'retrieve'}), name='user_api'),
+    path('admin/', AdminViewSet.as_view({'get': 'retrieve'}), name='admin_api'),
 ]
