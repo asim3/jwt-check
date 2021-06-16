@@ -7,3 +7,4 @@ class UserSerializer(Serializer):
     is_staff = BooleanField()
     is_authenticated = BooleanField()
     is_superuser = BooleanField()
+    auth = CharField(max_length=2000)

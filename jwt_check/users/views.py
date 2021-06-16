@@ -12,6 +12,7 @@ class UserViewSet(ViewSet):
             "is_staff": request.user.is_staff,
             "is_authenticated": request.user.is_authenticated,
             "is_superuser": request.user.is_superuser,
+            "auth": request.auth,
         }
         serializer = UserSerializer(user)
         return Response(serializer.data)
@@ -25,6 +26,7 @@ class AdminViewSet(ViewSet):
             "is_staff": request.user.is_staff,
             "is_authenticated": request.user.is_authenticated,
             "is_superuser": request.user.is_superuser,
+            "auth": request.auth,
         }
         serializer = UserSerializer(user)
         return Response(serializer.data)
