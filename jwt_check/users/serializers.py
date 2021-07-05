@@ -1,4 +1,4 @@
-from rest_framework.serializers import Serializer, CharField, BooleanField
+from rest_framework.serializers import Serializer, CharField, BooleanField, DictField
 
 
 class UserSerializer(Serializer):
@@ -8,3 +8,4 @@ class UserSerializer(Serializer):
     is_authenticated = BooleanField()
     is_superuser = BooleanField()
     auth = CharField(max_length=2000)
+    headers = DictField()
